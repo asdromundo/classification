@@ -15,6 +15,9 @@ models/
 # Data
 data/
 
+# Docs
+docs/
+
 # Autosaves from Jupyter Lab
 *-checkpoint.ipynb
 

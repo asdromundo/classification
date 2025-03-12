@@ -17,12 +17,13 @@ classification/
 │ ├── yolo/ # Modelos basados en YOLO
 │ ├── few_shot/ # Modelos Few-Shot Learning (ej. Prototypical Networks)
 │ └── checkpoints/ # Checkpoints de entrenamiento
+|── docs/ # Documentos relacionados que no se deben subir
 │── notebooks/ # Jupyter notebooks organizados por experimentos
 │── scripts/ # Scripts reutilizables (entrenamiento, evaluación, etc.)
 │── results/ # Reportes y métricas de evaluación 
 |── README.md # Este archivo
 │── .gitignore # Archivos a ignorar en Git
-│── pyproject.toml # Configuración de dependencias con uv
+└── pyproject.toml # Configuración de dependencias con uv
 ```
 
 ---
