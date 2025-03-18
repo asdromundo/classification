@@ -22,3 +22,6 @@ docs/
 *-checkpoint.ipynb
 
 notebooks/bus.jpg
+
+# YOLO generated files
+runs/
