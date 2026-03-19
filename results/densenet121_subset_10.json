@@ -1,0 +1,35 @@
+{
+  "model": "densenet121",
+  "split": "subset_10",
+  "pretrained": true,
+  "epochs_run": 32,
+  "best_val_acc": 0.8500000238418579,
+  "test_acc": 0.7217391133308411,
+  "test_f1": 0.723944365978241,
+  "test_precision": 0.7544847726821899,
+  "test_recall": 0.7055798768997192,
+  "test_loss": 0.686665952205658,
+  "confusion_matrix": [
+    [
+      38,
+      11,
+      4
+    ],
+    [
+      2,
+      87,
+      19
+    ],
+    [
+      1,
+      27,
+      41
+    ]
+  ],
+  "classes": [
+    "Necrotic-Tumor",
+    "Non-Tumor",
+    "Viable-Tumor"
+  ],
+  "checkpoint": "/home/asdromundo/Documentos/classification/models/densenet121/subset_10/best.ckpt"
+}

@@ -47,7 +47,7 @@ from torch.utils.data import DataLoader
 import lightning as L
 from lightning.pytorch.callbacks import ModelCheckpoint, EarlyStopping
 from lightning.pytorch.loggers import CSVLogger
-from torchmetrics import Accuracy, F1Score, ConfusionMatrix
+from torchmetrics import Accuracy, F1Score, Precision, Recall, ConfusionMatrix
 
 torch.set_float32_matmul_precision('high')
 
@@ -238,6 +238,8 @@ class LitClassifier(L.LightningModule):
         self.val_acc   = Accuracy(task=task, num_classes=num_classes)
         self.test_acc  = Accuracy(task=task, num_classes=num_classes)
         self.test_f1   = F1Score(task=task, num_classes=num_classes, average="macro")
+        self.test_precision = Precision(task=task, num_classes=num_classes, average="macro")
+        self.test_recall    = Recall(task=task, num_classes=num_classes, average="macro")
         self.test_cm   = ConfusionMatrix(task=task, num_classes=num_classes)
 
     def forward(self, x):
@@ -267,10 +269,14 @@ class LitClassifier(L.LightningModule):
         loss, preds, y = self._shared_step(batch)
         self.test_acc(preds, y)
         self.test_f1(preds, y)
+        self.test_precision(preds, y)
+        self.test_recall(preds, y)
         self.test_cm(preds, y)
         self.log("test_loss", loss)
         self.log("test_acc",  self.test_acc)
         self.log("test_f1",   self.test_f1)
+        self.log("test_precision", self.test_precision)
+        self.log("test_recall",    self.test_recall)
 
     def on_test_epoch_end(self):
         # Guarda la confusion matrix como atributo para leerla después del test
@@ -376,12 +382,14 @@ def run(args):
         "pretrained": args.pretrained,
         "epochs_run": trainer.current_epoch,
         "best_val_acc": float(checkpoint_cb.best_model_score),
-        "test_acc":   test_results[0].get("test_acc"),
-        "test_f1":    test_results[0].get("test_f1"),
-        "test_loss":  test_results[0].get("test_loss"),
+        "test_acc":       test_results[0].get("test_acc"),
+        "test_f1":        test_results[0].get("test_f1"),
+        "test_precision": test_results[0].get("test_precision"),
+        "test_recall":    test_results[0].get("test_recall"),
+        "test_loss":      test_results[0].get("test_loss"),
         "confusion_matrix": lit_model.confusion_matrix,
-        "classes":    CLASSES,
-        "checkpoint": checkpoint_cb.best_model_path,
+        "classes":        CLASSES,
+        "checkpoint":     checkpoint_cb.best_model_path,
     }
 
     result_path = results_dir / f"{args.model}_{args.split}.json"
@@ -389,8 +397,10 @@ def run(args):
         json.dump(result, f, indent=2)
 
     print(f"\n✓ Resultados guardados en: {result_path}")
-    print(f"  test_acc : {result['test_acc']:.4f}")
-    print(f"  test_f1  : {result['test_f1']:.4f}")
+    print(f"  test_acc       : {result['test_acc']:.4f}")
+    print(f"  test_f1        : {result['test_f1']:.4f}")
+    print(f"  test_precision : {result['test_precision']:.4f}")
+    print(f"  test_recall    : {result['test_recall']:.4f}")
 
     return result
 

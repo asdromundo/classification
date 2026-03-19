@@ -1,0 +1,35 @@
+{
+  "model": "alexnet",
+  "split": "full",
+  "pretrained": true,
+  "epochs_run": 73,
+  "best_val_acc": 0.9130434989929199,
+  "test_acc": 0.8826087117195129,
+  "test_f1": 0.8782651424407959,
+  "test_precision": 0.878920316696167,
+  "test_recall": 0.8800042867660522,
+  "test_loss": 1.0254075527191162,
+  "confusion_matrix": [
+    [
+      47,
+      6,
+      0
+    ],
+    [
+      7,
+      97,
+      4
+    ],
+    [
+      4,
+      6,
+      59
+    ]
+  ],
+  "classes": [
+    "Necrotic-Tumor",
+    "Non-Tumor",
+    "Viable-Tumor"
+  ],
+  "checkpoint": "/home/asdromundo/Documentos/classification/models/alexnet/full/best-v2.ckpt"
+}

@@ -1,0 +1,35 @@
+{
+  "model": "resnet50",
+  "split": "full",
+  "pretrained": true,
+  "epochs_run": 27,
+  "best_val_acc": 0.929347813129425,
+  "test_acc": 0.939130425453186,
+  "test_f1": 0.9345653057098389,
+  "test_precision": 0.9369326233863831,
+  "test_recall": 0.9323393106460571,
+  "test_loss": 0.15869078040122986,
+  "confusion_matrix": [
+    [
+      47,
+      6,
+      0
+    ],
+    [
+      3,
+      103,
+      2
+    ],
+    [
+      2,
+      1,
+      66
+    ]
+  ],
+  "classes": [
+    "Necrotic-Tumor",
+    "Non-Tumor",
+    "Viable-Tumor"
+  ],
+  "checkpoint": "/home/asdromundo/Documentos/classification/models/resnet50/full/best.ckpt"
+}

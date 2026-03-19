@@ -1,0 +1,35 @@
+{
+  "model": "efficientnet_v2_s",
+  "split": "subset_10",
+  "pretrained": true,
+  "epochs_run": 30,
+  "best_val_acc": 0.8999999761581421,
+  "test_acc": 0.895652174949646,
+  "test_f1": 0.8947941064834595,
+  "test_precision": 0.8859648704528809,
+  "test_recall": 0.912256121635437,
+  "test_loss": 0.47958293557167053,
+  "confusion_matrix": [
+    [
+      52,
+      1,
+      0
+    ],
+    [
+      10,
+      91,
+      7
+    ],
+    [
+      3,
+      3,
+      63
+    ]
+  ],
+  "classes": [
+    "Necrotic-Tumor",
+    "Non-Tumor",
+    "Viable-Tumor"
+  ],
+  "checkpoint": "/home/asdromundo/Documentos/classification/models/efficientnet_v2_s/subset_10/best.ckpt"
+}

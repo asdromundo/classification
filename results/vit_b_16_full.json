@@ -1,0 +1,35 @@
+{
+  "model": "vit_b_16",
+  "split": "full",
+  "pretrained": true,
+  "epochs_run": 69,
+  "best_val_acc": 0.8369565010070801,
+  "test_acc": 0.852173924446106,
+  "test_f1": 0.8461501598358154,
+  "test_precision": 0.8477726578712463,
+  "test_recall": 0.8575410842895508,
+  "test_loss": 0.5500373244285583,
+  "confusion_matrix": [
+    [
+      50,
+      1,
+      2
+    ],
+    [
+      12,
+      93,
+      3
+    ],
+    [
+      6,
+      10,
+      53
+    ]
+  ],
+  "classes": [
+    "Necrotic-Tumor",
+    "Non-Tumor",
+    "Viable-Tumor"
+  ],
+  "checkpoint": "/home/asdromundo/Documentos/classification/models/vit_b_16/full/best.ckpt"
+}
