@@ -1,0 +1,33 @@
+{
+  "model": "hybrid_B_yolo26s+efficientnet_v2_s_ensemble",
+  "split": "full",
+  "description": "Ensemble YOLO26s (0.4) + EfficientNetV2-S (0.6)",
+  "best_val_acc": 0.9510869383811951,
+  "ensemble_weight_yolo": 0.4,
+  "test_acc": 0.9347826242446899,
+  "test_f1": 0.9307467804966342,
+  "test_precision": 0.9365201936630507,
+  "test_recall": 0.9260499903786751,
+  "confusion_matrix": [
+    [
+      46,
+      7,
+      0
+    ],
+    [
+      1,
+      103,
+      4
+    ],
+    [
+      2,
+      1,
+      66
+    ]
+  ],
+  "classes": [
+    "Necrotic-Tumor",
+    "Non-Tumor",
+    "Viable-Tumor"
+  ]
+}

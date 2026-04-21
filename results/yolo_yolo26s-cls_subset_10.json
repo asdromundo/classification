@@ -1,0 +1,35 @@
+{
+  "model": "yolo_yolo26s-cls",
+  "split": "subset_10",
+  "pretrained": true,
+  "epochs_run": 100,
+  "best_val_acc": null,
+  "test_acc": 0.8913043737411499,
+  "test_f1": 0.8868227331614059,
+  "test_precision": 0.9007332462350236,
+  "test_recall": 0.8827296597818987,
+  "test_loss": null,
+  "confusion_matrix": [
+    [
+      51,
+      10,
+      6
+    ],
+    [
+      2,
+      94,
+      3
+    ],
+    [
+      0,
+      4,
+      60
+    ]
+  ],
+  "classes": [
+    "Necrotic-Tumor",
+    "Non-Tumor",
+    "Viable-Tumor"
+  ],
+  "checkpoint": "/home/asdromundo/Documentos/classification/models/yolo/yolo26s-cls/subset_10/train/weights/best.pt"
+}

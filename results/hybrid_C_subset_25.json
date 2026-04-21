@@ -1,0 +1,34 @@
+{
+  "model": "hybrid_C_efficientnet_v2_s+attention",
+  "split": "subset_25",
+  "description": "EfficientNetV2-S backbone (frozen) + Multi-Head Self-Attention head",
+  "epochs_run": 29,
+  "best_val_acc": 0.8936170339584351,
+  "test_acc": 0.804347813129425,
+  "test_f1": 0.7873468995094299,
+  "test_precision": 0.7873059511184692,
+  "test_recall": 0.7918477058410645,
+  "test_loss": 0.5846313238143921,
+  "confusion_matrix": [
+    [
+      39,
+      11,
+      3
+    ],
+    [
+      11,
+      91,
+      6
+    ],
+    [
+      13,
+      1,
+      55
+    ]
+  ],
+  "classes": [
+    "Necrotic-Tumor",
+    "Non-Tumor",
+    "Viable-Tumor"
+  ]
+}

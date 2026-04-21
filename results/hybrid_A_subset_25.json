@@ -1,0 +1,34 @@
+{
+  "model": "hybrid_A_yolo26s+transformer",
+  "split": "subset_25",
+  "description": "YOLO26s feature extractor (frozen) + Transformer encoder head",
+  "epochs_run": 25,
+  "best_val_acc": 0.978723406791687,
+  "test_acc": 0.834782600402832,
+  "test_f1": 0.8236331939697266,
+  "test_precision": 0.8527020215988159,
+  "test_recall": 0.8425925970077515,
+  "test_loss": 0.571202278137207,
+  "confusion_matrix": [
+    [
+      53,
+      0,
+      0
+    ],
+    [
+      15,
+      93,
+      0
+    ],
+    [
+      14,
+      9,
+      46
+    ]
+  ],
+  "classes": [
+    "Necrotic-Tumor",
+    "Non-Tumor",
+    "Viable-Tumor"
+  ]
+}

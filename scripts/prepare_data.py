@@ -40,7 +40,7 @@ from collections import defaultdict
 
 
 CLASSES = ["Non-Tumor", "Viable-Tumor", "Necrotic-Tumor"]
-TRAIN_FRACTIONS = {"full": 1.0, "subset_25": 0.25, "subset_10": 0.10}
+TRAIN_FRACTIONS = {"full": 1.0, "subset_25": 0.25, "subset_10": 0.10, "subset_05": 0.05}
 TEST_RATIO = 0.20      # 20% del total va a test fijo
 VAL_RATIO = 0.20       # 20% del pool restante va a val en cada experimento
 
@@ -177,7 +177,7 @@ def main():
         raise FileNotFoundError(f"No se encontró el directorio fuente: {src_dir}")
 
     if dst_dir.exists():
-        print(f"⚠ El directorio destino ya existe: {dst_dir}")
+        print(f"El directorio destino ya existe: {dst_dir}")
         resp = input("  ¿Sobreescribir? [s/N]: ").strip().lower()
         if resp != "s":
             print("Abortado.")

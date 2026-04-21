@@ -413,7 +413,7 @@ def main():
     )
     parser.add_argument(
         "--split", required=True,
-        choices=["full", "subset_25", "subset_10"],
+        choices=["full", "subset_25", "subset_10", "subset_05"],
         help="Subconjunto de datos a usar para entrenamiento"
     )
     parser.add_argument(
